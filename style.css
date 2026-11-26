@@ -1,0 +1,310 @@
+/* 1-6. Dasar halaman (rekonstruksi dari Praktikum04) */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: #1e293b;
+    background-color: #f8fafc;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+    margin: 0;
+    font-size: 18px;
+    color: #4f46e5;
+}
+
+.header nav a {
+    margin-left: 14px;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.konten {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.sidebar {
+    width: 240px;
+    align-self: flex-start;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.sidebar h2 {
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 6px 8px;
+    color: #475569;
+}
+
+.tabel-data {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabel-data caption {
+    padding-bottom: 10px;
+    text-align: left;
+    font-style: italic;
+    color: #64748b;
+}
+
+.tabel-data th,
+.tabel-data td {
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.tabel-data th {
+    background-color: #f1f5f9;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 720px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* 7. Pencarian, form, dan tombol */
+.konten h2 {
+    margin: 28px 0 12px;
+    font-size: 18px;
+}
+
+.sidebar input[type="text"],
+.form-buku input,
+.form-buku select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.sidebar ul + h2 {
+    margin-top: 24px;
+}
+
+.ringkas {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4338ca;
+}
+
+.sidebar button {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.form-buku {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.form-buku p {
+    flex: 1 1 160px;
+    margin: 0;
+}
+
+.form-buku label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-buku button {
+    align-self: flex-end;
+}
+
+/* 8. Kelas yang dipasang lewat JavaScript */
+.tabel-data tbody tr.dipilih {
+    background-color: #e0e7ff;
+}
+
+.tabel-data tbody tr.menipis td:last-child {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* 9. Tanda kolom salah dan kotak pesan */
+.form-buku input.salah {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.pesan-error {
+    margin: 16px 0 0;
+    padding: 12px 12px 12px 32px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    color: #991b1b;
+    font-size: 14px;
+}
+
+.pesan-sukses {
+    margin: 16px 0 0;
+    padding: 12px;
+    background-color: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 6px;
+    color: #065f46;
+    font-size: 14px;
+}
+
+.pesan-error:empty,
+.pesan-sukses:empty {
+    display: none;
+}
+
+/* 10. Judul halaman dan kotak pesan */
+.konten h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+}
+
+.konten .pesan-error,
+.konten .pesan-sukses {
+    margin: 14px 0 18px;
+}
+
+.tabel-data th:last-child,
+.tabel-data td:last-child {
+    white-space: nowrap;
+}
+
+/* 11. Jarak blok di dalam sidebar */
+.sidebar form + h2,
+.sidebar ul + h2 {
+    margin-top: 26px;
+}
+
+.sidebar .form-buku button {
+    width: 100%;
+}
+
+/* Penyesuaian: nama kelas partials (navbar, halaman, kaki) = kelas Praktikum05 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar .brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.navbar .menu a {
+    margin-left: 14px;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.halaman {
+    display: flex;
+    gap: 20px;
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.kaki {
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.kaki p {
+    margin: 0;
+}
+
+/* Tugas 3: pesan jumlah data di header */
+.info-jumlah {
+    max-width: 960px;
+    margin: 16px auto 0;
+    padding: 0 16px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+@media (max-width: 720px) {
+    .halaman {
+        flex-direction: column;
+    }
+}
